@@ -1,0 +1,8 @@
+{
+  "playwright.reuseBrowser": false,
+  "playwright.useTestServer": false,
+  "playwright.showTrace": false,
+  "playwright.env": {
+    "OPEN_HTML_REPORT": "1"
+  }
+}

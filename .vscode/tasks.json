@@ -1,0 +1,10 @@
+{
+	"version": "2.0.0",
+	"tasks": [
+		{
+			"label": "Run Playwright visual.spec.ts",
+			"type": "shell",
+			"command": "npx playwright test tests/visual.spec.ts --project=chromium"
+		}
+	]
+}

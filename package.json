@@ -1,0 +1,28 @@
+{
+  "name": "reto-dariel---zero-copy",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "cleanup:artifacts": "node ./scripts/cleanup-artifacts.js --days 7 --path test-results",
+    "open:latest-screenshot": "node ./scripts/open-latest-screenshot.js",
+    "open:report": "npx playwright show-report",
+    "test": "node ./scripts/run-tests-and-show-report.js --open-always",
+    "test:report-on-failure": "node ./scripts/run-tests-and-show-report.js",
+    "test:report-auto-close": "node ./scripts/run-tests-and-show-report.js --open-always --close-report-after 15",
+    "test:report-playwright": "node ./scripts/run-tests-and-show-report.js --open-with-playwright --open-always --close-report-after 15",
+    "test:report-auto-ctrlc": "node ./scripts/run-tests-and-show-report.js --open-always --auto-ctrlc 5",
+    "test:report-single": "node ./scripts/run-tests-and-show-report.js --open-on-single",
+    "test:clean": "node ./scripts/run-clean-tests.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "@playwright/test": "^1.57.0",
+    "@types/node": "^24.10.1",
+    "@types/pngjs": "^6.0.5",
+    "pixelmatch": "^7.1.0",
+    "pngjs": "^7.0.0"
+  }
+}
