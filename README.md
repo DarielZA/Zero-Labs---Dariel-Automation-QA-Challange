@@ -296,3 +296,9 @@ Default retention: 7 days
 - Refactored into POM structure
 - Enhanced with visual assertion helpers
 - Integrated with custom reporters
+
+---
+
+## Author
+
+**Dariel Aguilar** - QA Engineer
