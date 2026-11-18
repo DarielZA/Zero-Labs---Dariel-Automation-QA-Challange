@@ -1,4 +1,4 @@
-# Playwright Test Suite — Page Object Model (POM)
+# Playwright Test Suite - Page Object Model (POM)
 
 This repository demonstrates a professional Playwright test suite refactored to use the Page Object Model pattern for better maintainability, reusability, and readability.
 
@@ -17,9 +17,9 @@ Run tests from VS Code Test Explorer:
 ## Test Suites
 
 This project includes three test suites:
-- **Login Tests** (`tests/login.spec.ts`) — 5 UI tests validating login functionality with valid/invalid credentials using Page Object Model
-- **API Tests** (`tests/api.spec.ts`) — 3 REST API tests for the ReqRes API (GET, POST, DELETE) with visual result cards
-- **Visual Tests** (`tests/visual.spec.ts`) — Visual testing examples
+- **Login Tests** (`tests/login.spec.ts`): 5 UI tests validating login functionality with valid/invalid credentials using Page Object Model
+- **API Tests** (`tests/api.spec.ts`): 3 REST API tests for the ReqRes API (GET, POST, DELETE) with visual result cards
+- **Visual Tests** (`tests/visual.spec.ts`): Visual testing examples
 
 ### How `visual.spec.ts` Works
 
@@ -32,30 +32,30 @@ The `visual.spec.ts` test performs visual testing by comparing baseline (`src/vi
 The test suite uses a layered POM architecture for maintainability and reusability:
 
 **Base Layer**
-- `pages/BasePage.ts` — Base class storing the Playwright `Page` object and shared methods like `goto()`
+- `pages/BasePage.ts`: Base class storing the Playwright `Page` object and shared methods like `goto()`
 
 **Page Objects**
-- `pages/LoginPage.ts` — Encapsulates login page interactions
+- `pages/LoginPage.ts`: Encapsulates login page interactions
   - Methods: `goto()`, `login()`, `fillUsername()`, `fillPassword()`, `clickLogin()`
   - Locators: `flashLocator()` for assertion checks
-- `pages/index.ts` — Centralized exports for easy importing
+- `pages/index.ts`: Centralized exports for easy importing
 
 **Test Layer**
-- `tests/login.spec.ts` — Login validation tests using `LoginPage`
-- `tests/api.spec.ts` — API tests with visual result cards
-- `tests/visual.spec.ts` — Visual regression tests
+- `tests/login.spec.ts`: Login validation tests using `LoginPage`
+- `tests/api.spec.ts`: API tests with visual result cards
+- `tests/visual.spec.ts`: Visual regression tests
 
 **Supporting Infrastructure**
-- `gadgets/fixtures.ts` — Shared test fixtures with screenshot capture and browser context cleanup
-- `gadgets/assertHelpers.ts` — Visual assertion helpers that highlight elements in screenshots
-- `reporters/human-progress.js` — Emoji-based progress reporter
-- `reporters/open-report-if-single.js` — Auto-opens HTML report for small test runs (≤8 tests)
+- `gadgets/fixtures.ts`: Shared test fixtures with screenshot capture and browser context cleanup
+- `gadgets/assertHelpers.ts`: Visual assertion helpers that highlight elements in screenshots
+- `reporters/human-progress.js`: Emoji-based progress reporter
+- `reporters/open-report-if-single.js`: Auto-opens HTML report for small test runs (≤8 tests)
 
 **Key Dependencies**
-- `@playwright/test` — Core testing framework
-- `pixelmatch` — Fast pixel-level image comparison for visual testing
-- `pngjs` — PNG image processing and manipulation
-- `path` and `fs` (Node.js built-ins) — File system operations
+- `@playwright/test`: Core testing framework
+- `pixelmatch`: Fast pixel-level image comparison for visual testing
+- `pngjs`: PNG image processing and manipulation
+- `path` and `fs` (Node.js built-ins): File system operations
 
 ## How to Use the Page Object Model
 
@@ -279,8 +279,8 @@ Default retention: 7 days
 - Disabled in CI (when `CI` env var is set)
 
 ### Custom Reporters
-- `reporters/human-progress.js` — Terminal progress with emojis
-- `reporters/open-report-if-single.js` — Threshold-based auto-open
+- `reporters/human-progress.js`: Terminal progress with emojis
+- `reporters/open-report-if-single.js`: Threshold-based auto-open
 - Both configured in `playwright.config.ts` reporter array
 
 ## Development Notes
