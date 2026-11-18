@@ -11,7 +11,7 @@ npx playwright test
 
 Run tests from VS Code Test Explorer:
 - Click the beaker icon in the sidebar
-- Click ▶️ next to any test or test file
+- Click the play icon next to any test or test file
 - HTML report opens automatically for small test runs (≤8 tests)
 
 ## Test Suites
@@ -48,7 +48,7 @@ The test suite uses a layered POM architecture for maintainability and reusabili
 **Supporting Infrastructure**
 - `gadgets/fixtures.ts` — Shared test fixtures with screenshot capture and browser context cleanup
 - `gadgets/assertHelpers.ts` — Visual assertion helpers that highlight elements in screenshots
-- `reporters/human-progress.js` — Emoji-based progress reporter (🚀▶️✅❌)
+- `reporters/human-progress.js` — Emoji-based progress reporter
 - `reporters/open-report-if-single.js` — Auto-opens HTML report for small test runs (≤8 tests)
 
 **Key Dependencies**
@@ -152,8 +152,8 @@ npx playwright show-report
 
 ### VS Code Test Explorer
 
-1. Click the beaker (🧪) icon in the sidebar
-2. Click ▶️ next to any test, test file, or "Run All Tests"
+1. Click the beaker icon in the sidebar
+2. Click the play icon next to any test, test file, or "Run All Tests"
 3. HTML report opens automatically for runs with ≤8 tests
 4. View results inline or click test names to see details
 
@@ -181,7 +181,7 @@ npm run test:report -- --port 9324
 
 ## Key Features
 
-### 🎯 Visual Assertion Helpers
+### Visual Assertion Helpers
 Assertions are highlighted in screenshots for easy debugging:
 - **Passing assertions** show a yellow "assert" badge
 - **Failing assertions** show a red "Assert Failed" badge
@@ -193,16 +193,16 @@ import { expectLocatorToContainText } from '../gadgets/assertHelpers';
 await expectLocatorToContainText(loginPage.flashLocator(), 'You logged into a secure area!');
 ```
 
-### 📸 Screenshot Management
+### Screenshot Management
 - **Auto-capture**: Screenshots taken on test failure (`screenshot: 'only-on-failure'`)
 - **Attached to reports**: All screenshots visible in HTML report
 - **Organized by test file**: All test artifacts (screenshots, traces, videos) saved in `test-results/login.spec.ts/`, `test-results/api.spec.ts/`, `test-results/visual.spec.ts/` subfolders
 - **Browser context cleanup**: Contexts properly closed after each test
 - **No orphaned processes**: Chromium workers cleaned up automatically
 
-### 🎨 Human-Friendly Terminal Progress
+### Human-Friendly Terminal Progress
 Custom reporter `reporters/human-progress.js` provides:
-- **Emoji status**: 🚀 start, ▶️ running, ✅ passed, ❌ failed
+- **Emoji status**: start, running, passed, failed
 - **Live progress**: `Progress: 3/20 (15.0%) • Passed: 3 • Failed: 0`
 - **Color-coded output**: Quick visual status recognition
 - **Per-project summary**: Aggregated results by browser
@@ -212,13 +212,13 @@ Disable temporarily:
 $env:PLAYWRIGHT_NO_HUMAN="1"; npx playwright test
 ```
 
-### 🔬 API Test Enhancements
+### API Test Enhancements
 - **Input logging**: All requests logged (endpoint, method, headers, payload)
 - **Visual result cards**: Color-coded PASSED/FAILED cards with test details
 - **Headless rendering**: Result cards generated without visible browser windows
 - **Auto-attached**: Cards appear in HTML report screenshots section
 
-### 🧹 Artifact Cleanup
+### Artifact Cleanup
 Remove old test artifacts (screenshots, traces, videos):
 
 **Cross-platform (npm):**
